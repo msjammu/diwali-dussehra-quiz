@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QuizHome } from '@/components/QuizHome';
 import { QuizGame } from '@/components/QuizGame';
 import { QuizResults } from '@/components/QuizResults';
@@ -19,10 +19,15 @@ function App() {
   const [quizScore, setQuizScore] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<QuizAnswer[]>([]);
 
-  const [, setTotalAttempts] = useKV<number>('total-quiz-attempts', 0);
-  const [, setDiwaliAttempts] = useKV<number>('diwali-attempts', 0);
-  const [, setDussehraAttempts] = useKV<number>('dussehra-attempts', 0);
-  const [, setSikhWisdomAttempts] = useKV<number>('sikh-wisdom-attempts', 0);
+  const [, setTotalSeekers] = useKV<number>('total-app-launches', 0);
+  const [, setDiwaliCompletions] = useKV<number>('diwali-completions', 0);
+  const [, setDussehraCompletions] = useKV<number>('dussehra-completions', 0);
+  const [, setSikhWisdomCompletions] = useKV<number>('sikh-wisdom-completions', 0);
+
+  // Increment total seekers count when app loads
+  useEffect(() => {
+    setTotalSeekers(prev => (prev || 0) + 1);
+  }, [setTotalSeekers]);
 
   const handleSelectQuiz = (quiz: Quiz) => {
     setCurrentQuiz(quiz);
@@ -34,14 +39,12 @@ function App() {
     setQuizAnswers(answers);
     setAppState('results');
 
-    setTotalAttempts(prev => (prev || 0) + 1);
-    
     if (currentQuiz?.category === 'diwali') {
-      setDiwaliAttempts(prev => (prev || 0) + 1);
+      setDiwaliCompletions(prev => (prev || 0) + 1);
     } else if (currentQuiz?.category === 'dussehra') {
-      setDussehraAttempts(prev => (prev || 0) + 1);
+      setDussehraCompletions(prev => (prev || 0) + 1);
     } else if (currentQuiz?.category === 'sikh-wisdom') {
-      setSikhWisdomAttempts(prev => (prev || 0) + 1);
+      setSikhWisdomCompletions(prev => (prev || 0) + 1);
     }
   };
 
