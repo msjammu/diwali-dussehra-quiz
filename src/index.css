@@ -8,28 +8,29 @@
 }
 
 :root {
-  --background: oklch(0.98 0.02 75);
-  --foreground: oklch(0.15 0 0);
+  /* Diwali-inspired warm palette with deep navy background */
+  --background: oklch(0.08 0.05 240);
+  --foreground: oklch(0.95 0.02 45);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
+  --card: oklch(0.12 0.08 35);
+  --card-foreground: oklch(0.95 0.02 45);
+  --popover: oklch(0.12 0.08 35);
+  --popover-foreground: oklch(0.95 0.02 45);
 
-  --primary: oklch(0.65 0.18 45);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.45 0.15 285);
-  --secondary-foreground: oklch(1 0 0);
-  --accent: oklch(0.8 0.15 75);
-  --accent-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.75 0.15 45);
+  --primary-foreground: oklch(0.08 0.05 240);
+  --secondary: oklch(0.65 0.20 25);
+  --secondary-foreground: oklch(0.95 0.02 45);
+  --accent: oklch(0.85 0.12 75);
+  --accent-foreground: oklch(0.15 0.05 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
 
-  --muted: oklch(0.95 0.02 75);
-  --muted-foreground: oklch(0.45 0 0);
-  --border: oklch(0.9 0.02 75);
-  --input: oklch(0.9 0.02 75);
-  --ring: oklch(0.65 0.18 45);
+  --muted: oklch(0.15 0.06 35);
+  --muted-foreground: oklch(0.65 0.05 45);
+  --border: oklch(0.20 0.08 35);
+  --input: oklch(0.20 0.08 35);
+  --ring: oklch(0.75 0.15 45);
 
   --radius: 0.75rem;
 }
@@ -65,6 +66,40 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, var(--background) 0%, oklch(0.96 0.04 60) 100%);
+  background: linear-gradient(135deg, 
+    var(--background) 0%, 
+    oklch(0.12 0.08 25) 25%,
+    oklch(0.15 0.10 45) 50%,
+    oklch(0.10 0.06 35) 75%,
+    var(--background) 100%);
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Diwali decorative elements */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, oklch(0.75 0.15 45 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, oklch(0.85 0.12 75 / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, oklch(0.65 0.20 25 / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, oklch(0.75 0.15 45 / 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Subtle twinkling animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.diwali-sparkle {
+  animation: twinkle 2s ease-in-out infinite;
 }
