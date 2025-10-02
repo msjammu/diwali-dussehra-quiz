@@ -22,6 +22,7 @@ function App() {
   const [, setTotalAttempts] = useKV<number>('total-quiz-attempts', 0);
   const [, setDiwaliAttempts] = useKV<number>('diwali-attempts', 0);
   const [, setDussehraAttempts] = useKV<number>('dussehra-attempts', 0);
+  const [, setSikhWisdomAttempts] = useKV<number>('sikh-wisdom-attempts', 0);
 
   const handleSelectQuiz = (quiz: Quiz) => {
     setCurrentQuiz(quiz);
@@ -39,6 +40,8 @@ function App() {
       setDiwaliAttempts(prev => (prev || 0) + 1);
     } else if (currentQuiz?.category === 'dussehra') {
       setDussehraAttempts(prev => (prev || 0) + 1);
+    } else if (currentQuiz?.category === 'sikh-wisdom') {
+      setSikhWisdomAttempts(prev => (prev || 0) + 1);
     }
   };
 

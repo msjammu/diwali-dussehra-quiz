@@ -11,7 +11,7 @@ export interface Quiz {
   title: string;
   description: string;
   questions: Question[];
-  category: 'diwali' | 'dussehra';
+  category: 'diwali' | 'dussehra' | 'sikh-wisdom';
 }
 
 export const quizzes: Quiz[] = [
@@ -380,6 +380,162 @@ export const quizzes: Quiz[] = [
         options: ['After the festival', 'On Vijayadashami', 'During Navratri', 'Before Dussehra'],
         correctAnswer: 1,
         explanation: 'Vijayadashami is considered auspicious for children to start their education (Vidyarambham).'
+      }
+    ]
+  },
+  {
+    id: 'diwali-sikh-wisdom',
+    title: 'Diwali in Sikh Philosophy',
+    description: 'Explore Diwali\'s spiritual meaning from Sri Guru Granth Sahib Ji',
+    category: 'sikh-wisdom',
+    questions: [
+      {
+        id: 'dsw-1',
+        question: 'According to Guru Granth Sahib Ji, what is the true meaning of lighting lamps during Diwali?',
+        options: ['Decorating homes', 'Lighting the lamp of divine knowledge within', 'Celebrating wealth', 'Following traditions'],
+        correctAnswer: 1,
+        explanation: 'Guru Ji teaches that the real Diwali is lighting the lamp of divine knowledge and wisdom within our hearts, dispelling the darkness of ignorance.'
+      },
+      {
+        id: 'dsw-2',
+        question: 'What does Guru Granth Sahib Ji say about the inner light during Diwali?',
+        options: ['It should be colorful', 'It should burn continuously with Nam Simran', 'It should be bright externally', 'It should be shared with others only'],
+        correctAnswer: 1,
+        explanation: 'The Guru teaches that the inner light of divine remembrance (Nam Simran) should burn continuously, illuminating our soul with the Lord\'s presence.'
+      },
+      {
+        id: 'dsw-3',
+        question: 'According to Sikh teachings, what darkness should Diwali truly dispel?',
+        options: ['Physical darkness', 'Ignorance and spiritual darkness', 'Sadness', 'Poverty'],
+        correctAnswer: 1,
+        explanation: 'Guru Granth Sahib Ji emphasizes that Diwali should dispel the darkness of ignorance, ego, and separation from the Divine.'
+      },
+      {
+        id: 'dsw-4',
+        question: 'What does Guru Ji teach about the celebration of festivals like Diwali?',
+        options: ['They are unnecessary', 'They should be celebrated with remembrance of the Divine', 'They are only for enjoyment', 'They are cultural obligations'],
+        correctAnswer: 1,
+        explanation: 'Guru Granth Sahib Ji teaches that festivals should be celebrated with devotion and remembrance of the Divine, making them spiritually meaningful.'
+      },
+      {
+        id: 'dsw-5',
+        question: 'According to Sikh philosophy, what is the real wealth to be gained during Diwali?',
+        options: ['Material riches', 'The treasure of Naam (Divine Name)', 'Gold and jewelry', 'Business profits'],
+        correctAnswer: 1,
+        explanation: 'The true wealth according to Guru Granth Sahib Ji is the treasure of Naam - the Divine Name and its constant remembrance.'
+      },
+      {
+        id: 'dsw-6',
+        question: 'What does Guru Granth Sahib Ji say about the light that never extinguishes?',
+        options: ['Electric lights', 'Oil lamps', 'The light of divine wisdom', 'Candles'],
+        correctAnswer: 2,
+        explanation: 'The eternal light of divine wisdom and knowledge, once lit within the heart, never extinguishes and guides us through all darkness.'
+      },
+      {
+        id: 'dsw-7',
+        question: 'How should one prepare for Diwali according to Sikh teachings?',
+        options: ['Buy new clothes only', 'Clean the mind and heart through meditation', 'Prepare sweets only', 'Decorate the house only'],
+        correctAnswer: 1,
+        explanation: 'True preparation involves cleansing the mind and heart through meditation, prayer, and removing negative thoughts and emotions.'
+      },
+      {
+        id: 'dsw-8',
+        question: 'What does Guru Granth Sahib Ji teach about sharing during Diwali?',
+        options: ['Share only with family', 'Share the light of knowledge and love with all', 'Share only material gifts', 'Share only with friends'],
+        correctAnswer: 1,
+        explanation: 'The Guru teaches us to share the light of spiritual knowledge, divine love, and compassion with all beings without discrimination.'
+      },
+      {
+        id: 'dsw-9',
+        question: 'According to Sikh philosophy, what should be the focus during Diwali celebrations?',
+        options: ['External decorations', 'Inner spiritual enlightenment', 'Social gatherings', 'Food preparation'],
+        correctAnswer: 1,
+        explanation: 'The primary focus should be on inner spiritual enlightenment and connecting with the Divine through meditation and remembrance.'
+      },
+      {
+        id: 'dsw-10',
+        question: 'What does Guru Granth Sahib Ji say about the victory celebrated during Diwali?',
+        options: ['Victory over enemies', 'Victory of the soul over ego and ignorance', 'Victory in business', 'Victory over competitors'],
+        correctAnswer: 1,
+        explanation: 'The true victory is the triumph of the enlightened soul over ego, ignorance, and all negative tendencies that separate us from the Divine.'
+      }
+    ]
+  },
+  {
+    id: 'dussehra-sikh-wisdom',
+    title: 'Dussehra in Sikh Philosophy',
+    description: 'Understand Dussehra\'s deeper meaning through Guru Granth Sahib Ji',
+    category: 'sikh-wisdom',
+    questions: [
+      {
+        id: 'dssw-1',
+        question: 'According to Guru Granth Sahib Ji, what is the real Ravana that needs to be defeated?',
+        options: ['External enemies', 'The ego and five vices within', 'Other people', 'Physical challenges'],
+        correctAnswer: 1,
+        explanation: 'The real Ravana is the ego (haumai) and the five vices (lust, anger, greed, attachment, pride) that reside within us and separate us from the Divine.'
+      },
+      {
+        id: 'dssw-2',
+        question: 'What represents the true Rama in Sikh teachings during Dussehra?',
+        options: ['A historical figure', 'The Divine presence within us', 'A king', 'A warrior'],
+        correctAnswer: 1,
+        explanation: 'Rama represents the Divine consciousness and the enlightened soul that conquers all internal negativities through spiritual wisdom.'
+      },
+      {
+        id: 'dssw-3',
+        question: 'According to Sikh philosophy, what are the ten heads of Ravana symbolic of?',
+        options: ['Physical strength', 'The five vices and five senses uncontrolled', 'Intelligence', 'Knowledge'],
+        correctAnswer: 1,
+        explanation: 'The ten heads symbolize the five vices (kaam, krodh, lobh, moh, ahankar) and the five senses when they are not controlled by spiritual wisdom.'
+      },
+      {
+        id: 'dssw-4',
+        question: 'What does Guru Granth Sahib Ji teach about the battle between good and evil?',
+        options: ['It happens externally only', 'It is a constant inner battle in every soul', 'It is historical only', 'It is metaphorical only'],
+        correctAnswer: 1,
+        explanation: 'The real battle between dharma (righteousness) and adharma (unrighteousness) happens constantly within every individual\'s heart and mind.'
+      },
+      {
+        id: 'dssw-5',
+        question: 'According to Sikh teachings, what weapon defeats the inner Ravana?',
+        options: ['Physical strength', 'The arrow of Naam Simran and divine wisdom', 'Material success', 'Social status'],
+        correctAnswer: 1,
+        explanation: 'The weapon is the constant remembrance of the Divine Name (Naam Simran) and the wisdom gained through Guru\'s teachings.'
+      },
+      {
+        id: 'dssw-6',
+        question: 'What does the victory on Vijayadashami represent in Sikh philosophy?',
+        options: ['Military conquest', 'The soul\'s victory over maya (illusion)', 'Political success', 'Economic gain'],
+        correctAnswer: 1,
+        explanation: 'It represents the soul\'s ultimate victory over maya (worldly illusion) and the realization of its true divine nature.'
+      },
+      {
+        id: 'dssw-7',
+        question: 'According to Guru Granth Sahib Ji, who can achieve this spiritual victory?',
+        options: ['Only warriors', 'Anyone who follows the Guru\'s path with devotion', 'Only scholars', 'Only religious leaders'],
+        correctAnswer: 1,
+        explanation: 'Any person who follows the Guru\'s path with sincere devotion, meditation, and selfless service can achieve this spiritual victory.'
+      },
+      {
+        id: 'dssw-8',
+        question: 'What does Sikh philosophy say about the celebration of such victories?',
+        options: ['Celebrate externally only', 'Celebrate with humility and gratitude to the Divine', 'Celebrate with pride', 'Celebrate alone'],
+        correctAnswer: 1,
+        explanation: 'True celebration should be with humility, gratitude to the Divine, and sharing the spiritual joy with the community.'
+      },
+      {
+        id: 'dssw-9',
+        question: 'According to Guru Granth Sahib Ji, what helps in this spiritual battle?',
+        options: ['Individual effort alone', 'Satsang (holy company) and Guru\'s grace', 'Material resources', 'Social connections'],
+        correctAnswer: 1,
+        explanation: 'Satsang (company of the spiritually inclined) and the Guru\'s grace are essential supports in overcoming internal negativities.'
+      },
+      {
+        id: 'dssw-10',
+        question: 'What is the ultimate message of Dussehra according to Sikh teachings?',
+        options: ['External rituals are important', 'Inner transformation through divine grace is the goal', 'Historical events matter most', 'Seasonal celebrations only'],
+        correctAnswer: 1,
+        explanation: 'The ultimate message is that inner transformation through divine grace, self-reflection, and spiritual practice is the true purpose of such observances.'
       }
     ]
   }
