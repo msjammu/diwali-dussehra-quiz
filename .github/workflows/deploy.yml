@@ -58,13 +58,20 @@ jobs:
           ls -la dist/
         
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
+        
+      - name: Verify build output
+        run: |
+          echo "Verifying dist folder contents:"
+          find ./dist -type f -name "*.html" -o -name "*.js" -o -name "*.css" | head -10
+          echo "Index.html exists:" 
+          ls -la ./dist/index.html || echo "index.html not found!"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist repository
           path: './dist'
+          retention-days: 1
           
       - name: Deploy to GitHub Pages
         id: deployment
