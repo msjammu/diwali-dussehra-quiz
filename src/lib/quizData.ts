@@ -11,7 +11,7 @@ export interface Quiz {
   title: string;
   description: string;
   questions: Question[];
-  category: 'diwali' | 'dussehra' | 'sikh-wisdom';
+  category: 'diwali' | 'dussehra' | 'sikh-wisdom' | 'ravan-life';
 }
 
 export const quizzes: Quiz[] = [
@@ -536,6 +536,119 @@ export const quizzes: Quiz[] = [
         options: ['External rituals are important', 'Inner transformation through divine grace is the goal', 'Historical events matter most', 'Seasonal celebrations only'],
         correctAnswer: 1,
         explanation: 'The ultimate message is that inner transformation through divine grace, self-reflection, and spiritual practice is the true purpose of such observances.'
+      }
+    ]
+  },
+  {
+    id: 'ravan-life',
+    title: 'The Life of Ravan',
+    description: 'Explore the complex life story of the legendary king Ravan',
+    category: 'ravan-life',
+    questions: [
+      {
+        id: 'rl-1',
+        question: 'What was Ravan\'s original name before he became known as Ravan?',
+        options: ['Dashanan', 'Dashagriva', 'Both A and B', 'Lankapati'],
+        correctAnswer: 2,
+        explanation: 'Ravan was originally known as both Dashanan (ten-faced) and Dashagriva (ten-necked) before being called Ravan.'
+      },
+      {
+        id: 'rl-2',
+        question: 'Who were Ravan\'s parents?',
+        options: ['Vishrava and Kaikasi', 'Brahma and Saraswati', 'Shiva and Parvati', 'Kubera and Riddhi'],
+        correctAnswer: 0,
+        explanation: 'Ravan was the son of sage Vishrava and the demoness Kaikasi, making him part Brahmin and part demon.'
+      },
+      {
+        id: 'rl-3',
+        question: 'What was Ravan\'s capital city?',
+        options: ['Hastinapur', 'Dwarka', 'Lanka', 'Ayodhya'],
+        correctAnswer: 2,
+        explanation: 'Lanka was Ravan\'s magnificent capital city, known for its golden palaces and impregnable defenses.'
+      },
+      {
+        id: 'rl-4',
+        question: 'How many heads did Ravan have?',
+        options: ['5', '10', '20', '100'],
+        correctAnswer: 1,
+        explanation: 'Ravan had ten heads, which is why he was called Dashanan (ten-faced) or Dashagriva (ten-necked).'
+      },
+      {
+        id: 'rl-5',
+        question: 'What severe penance did Ravan perform to please Lord Brahma?',
+        options: ['Stood on one leg for 1000 years', 'Cut off his heads as offerings', 'Meditated underwater', 'Fasted for 10,000 years'],
+        correctAnswer: 1,
+        explanation: 'Ravan cut off his ten heads one by one and offered them to Brahma. Pleased by his devotion, Brahma restored his heads and granted him boons.'
+      },
+      {
+        id: 'rl-6',
+        question: 'What boon did Ravan receive from Lord Brahma?',
+        options: ['Immortality', 'Invincibility against gods and demons', 'Power to fly', 'Ability to change forms'],
+        correctAnswer: 1,
+        explanation: 'Brahma granted Ravan invincibility against gods, demons, and celestial beings, but Ravan arrogantly didn\'t ask for protection from humans and animals.'
+      },
+      {
+        id: 'rl-7',
+        question: 'Who was Ravan\'s half-brother and what was his domain?',
+        options: ['Kubera - god of wealth', 'Indra - king of gods', 'Varuna - god of water', 'Agni - god of fire'],
+        correctAnswer: 0,
+        explanation: 'Kubera, the god of wealth, was Ravan\'s half-brother (son of Vishrava and Ilabila). Ravan later conquered Lanka from Kubera.'
+      },
+      {
+        id: 'rl-8',
+        question: 'What was Ravan\'s greatest strength besides his physical power?',
+        options: ['His wealth', 'His vast knowledge and scholarship', 'His army', 'His magical weapons'],
+        correctAnswer: 1,
+        explanation: 'Ravan was extraordinarily learned, well-versed in the Vedas, an accomplished musician, and a great scholar of various sciences.'
+      },
+      {
+        id: 'rl-9',
+        question: 'Which musical instrument was Ravan particularly skilled at playing?',
+        options: ['Flute', 'Veena', 'Drums', 'Sitar'],
+        correctAnswer: 1,
+        explanation: 'Ravan was an accomplished veena player and is said to have created a special veena using his own nerves and hair.'
+      },
+      {
+        id: 'rl-10',
+        question: 'What was the name of Ravan\'s wife?',
+        options: ['Surpanakha', 'Mandodari', 'Kaikasi', 'Trijata'],
+        correctAnswer: 1,
+        explanation: 'Mandodari was Ravan\'s principal wife, known for her beauty, wisdom, and virtue. She often advised Ravan against his wrongdoings.'
+      },
+      {
+        id: 'rl-11',
+        question: 'Who were Ravan\'s two brothers?',
+        options: ['Kumbhakarna and Vibhishana', 'Meghnad and Atikaya', 'Indrajit and Akshayakumara', 'Dhumraksha and Maricha'],
+        correctAnswer: 0,
+        explanation: 'Kumbhakarna (the giant sleeper) and Vibhishana (the righteous one who later joined Rama) were Ravan\'s brothers.'
+      },
+      {
+        id: 'rl-12',
+        question: 'What was Ravan\'s son Indrajit also known as?',
+        options: ['Meghnad', 'Akshayakumara', 'Atikaya', 'Trishira'],
+        correctAnswer: 0,
+        explanation: 'Indrajit was also known as Meghnad. He was called Indrajit after he defeated and captured Indra, the king of gods.'
+      },
+      {
+        id: 'rl-13',
+        question: 'What was Ravan\'s greatest weakness that led to his downfall?',
+        options: ['His physical strength', 'His pride and ego', 'His knowledge', 'His wealth'],
+        correctAnswer: 1,
+        explanation: 'Ravan\'s excessive pride, ego, and arrogance were his greatest weaknesses, leading him to make decisions that ultimately caused his destruction.'
+      },
+      {
+        id: 'rl-14',
+        question: 'According to some texts, Ravan was a devotee of which god?',
+        options: ['Vishnu', 'Brahma', 'Shiva', 'Indra'],
+        correctAnswer: 2,
+        explanation: 'Despite being Rama\'s (Vishnu\'s avatar) enemy, Ravan was paradoxically a great devotee of Lord Shiva and composed the Shiva Tandava Stotram.'
+      },
+      {
+        id: 'rl-15',
+        question: 'What incident involving Shiva\'s mount Nandi gave Ravan his name?',
+        options: ['He defeated Nandi in battle', 'He was cursed by Nandi', 'He was mocked by Nandi for his appearance', 'He stole something from Nandi'],
+        correctAnswer: 2,
+        explanation: 'When Ravan mocked Nandi (who appeared as a monkey), Nandi cursed him that monkeys would be the cause of his destruction, which came true through Hanuman and the monkey army.'
       }
     ]
   }

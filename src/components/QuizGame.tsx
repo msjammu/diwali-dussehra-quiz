@@ -90,7 +90,11 @@ export function QuizGame({ quiz, onBack, onComplete }: QuizGameProps) {
               </p>
             </div>
             <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-              {quiz.category === 'diwali' ? 'Diwali' : 'Dussehra'}
+              {quiz.category === 'diwali' ? 'Diwali' : 
+               quiz.category === 'dussehra' ? 'Dussehra' :
+               quiz.category === 'sikh-wisdom' ? 'Spiritual Wisdom' :
+               quiz.category === 'ravan-life' ? 'Ravan Life' : 
+               quiz.category}
             </Badge>
           </div>
 
