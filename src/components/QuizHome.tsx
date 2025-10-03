@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Users, Sparkle, BookOpen, Flame, Star, Crown } from "@phosphor-icons/react";
+import { Trophy, Users, Sparkle, BookOpen, Flame, Star, Crown, Sword } from "@phosphor-icons/react";
 import { quizzes, type Quiz } from "@/lib/quizData";
 import { useKV } from '@github/spark/hooks';
 import { useState, useEffect } from 'react';
@@ -15,6 +15,7 @@ export function QuizHome({ onSelectQuiz }: QuizHomeProps) {
   const [diwaliCompletions] = useKV<number>("diwali-completions", 0);
   const [dussehraCompletions] = useKV<number>("dussehra-completions", 0);
   const [sikhWisdomCompletions] = useKV<number>("sikh-wisdom-completions", 0);
+  const [ravanLifeCompletions] = useKV<number>("ravan-life-completions", 0);
   const [globalVisits, setGlobalVisits] = useState<number>(0);
 
   // Generate a realistic visitor counter
@@ -52,6 +53,7 @@ export function QuizHome({ onSelectQuiz }: QuizHomeProps) {
   const diwaliQuizzes = quizzes.filter(q => q.category === 'diwali');
   const dussehraQuizzes = quizzes.filter(q => q.category === 'dussehra');
   const sikhWisdomQuizzes = quizzes.filter(q => q.category === 'sikh-wisdom');
+  const ravanLifeQuizzes = quizzes.filter(q => q.category === 'ravan-life');
 
   return (
     <div className="min-h-screen relative">
@@ -129,7 +131,7 @@ export function QuizHome({ onSelectQuiz }: QuizHomeProps) {
               <div className="relative flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-xl px-6 py-4 border border-border/50 hover:border-accent/30 transition-all duration-300">
                 <Sparkle className="w-6 h-6 text-accent diwali-sparkle" weight="fill" />
                 <div className="text-left">
-                  <div className="text-2xl font-bold text-foreground">3</div>
+                  <div className="text-2xl font-bold text-foreground">4</div>
                   <div className="text-sm text-muted-foreground">Sacred Topics</div>
                 </div>
               </div>
@@ -322,6 +324,70 @@ export function QuizHome({ onSelectQuiz }: QuizHomeProps) {
                       >
                         <BookOpen className="w-4 h-4 mr-2" weight="fill" />
                         Seek Wisdom
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Ravan Life Section */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-destructive/5 to-orange-500/5 rounded-2xl blur-2xl"></div>
+            <div className="relative">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-destructive via-orange-600 to-destructive flex items-center justify-center shadow-lg shadow-destructive/25">
+                    <Sword className="w-8 h-8 text-destructive-foreground" weight="fill" />
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <Crown className="w-6 h-6 text-orange-500 diwali-sparkle" weight="fill" style={{ animationDelay: '1.5s' }} />
+                  </div>
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-destructive to-orange-600 bg-clip-text text-transparent">
+                    👑 The Life of Ravan
+                  </h2>
+                  <p className="text-muted-foreground text-lg">
+                    Learn about the legendary king • {ravanLifeCompletions || 0} completed
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {ravanLifeQuizzes.map((quiz, index) => (
+                  <Card key={quiz.id} className="group relative overflow-hidden hover:shadow-2xl hover:shadow-destructive/10 transition-all duration-500 border border-border/50 hover:border-destructive/40 bg-card/60 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardHeader className="pb-3 relative z-10">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <CardTitle className="text-xl font-bold text-card-foreground group-hover:text-destructive transition-colors duration-300">
+                            {quiz.title}
+                          </CardTitle>
+                          <CardDescription className="mt-2 text-muted-foreground leading-relaxed">
+                            {quiz.description}
+                          </CardDescription>
+                        </div>
+                        <div className="flex flex-col items-end gap-2">
+                          <Badge variant="secondary" className="bg-destructive/15 text-destructive border-destructive/30 font-medium">
+                            15 Questions
+                          </Badge>
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Sword key={i} className="w-3 h-3 text-destructive" weight="fill" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0 relative z-10">
+                      <Button 
+                        onClick={() => onSelectQuiz(quiz)}
+                        className="w-full bg-gradient-to-r from-destructive to-orange-600 hover:from-destructive/90 hover:to-orange-600/90 text-destructive-foreground font-semibold py-3 shadow-lg hover:shadow-xl hover:shadow-destructive/25 transition-all duration-300 group-hover:scale-[1.02]"
+                      >
+                        <Sword className="w-4 h-4 mr-2" weight="fill" />
+                        Explore Legend
                       </Button>
                     </CardContent>
                   </Card>

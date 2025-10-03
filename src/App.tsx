@@ -23,6 +23,7 @@ function App() {
   const [, setDiwaliCompletions] = useKV<number>('diwali-completions', 0);
   const [, setDussehraCompletions] = useKV<number>('dussehra-completions', 0);
   const [, setSikhWisdomCompletions] = useKV<number>('sikh-wisdom-completions', 0);
+  const [, setRavanLifeCompletions] = useKV<number>('ravan-life-completions', 0);
 
   // Increment total seekers count when app loads
   useEffect(() => {
@@ -45,6 +46,8 @@ function App() {
       setDussehraCompletions(prev => (prev || 0) + 1);
     } else if (currentQuiz?.category === 'sikh-wisdom') {
       setSikhWisdomCompletions(prev => (prev || 0) + 1);
+    } else if (currentQuiz?.category === 'ravan-life') {
+      setRavanLifeCompletions(prev => (prev || 0) + 1);
     }
   };
 

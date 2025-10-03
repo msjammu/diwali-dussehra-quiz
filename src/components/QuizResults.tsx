@@ -45,7 +45,11 @@ export function QuizResults({ quiz, score, totalQuestions, answers, onBackToHome
             
             <div className="flex items-center justify-center gap-4 mb-6">
               <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-4 py-2 text-base">
-                {quiz.category === 'diwali' ? 'Diwali' : 'Dussehra'}
+                {quiz.category === 'diwali' ? 'Diwali' : 
+                 quiz.category === 'dussehra' ? 'Dussehra' :
+                 quiz.category === 'sikh-wisdom' ? 'Spiritual Wisdom' :
+                 quiz.category === 'ravan-life' ? 'Ravan Life' : 
+                 quiz.category}
               </Badge>
             </div>
           </CardHeader>
